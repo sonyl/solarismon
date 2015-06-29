@@ -1,0 +1,24 @@
+Group All
+Group gSolaris 		(All)
+Group gTest 		(All)
+
+DateTime solarisLastUpdate "Last Update [%1$tA, %1$td.%1$tm.%1$tY %1$tR]" <calendar> (gSolaris) {mqtt="<[tux:sensors/solaris:state:JS(getValue.js)]"}
+String solarisStatus  "Status [%s]"                  (gSolaris) {mqtt="<[tux:sensors/solaris:state:JSONPATH($.Status)]"}
+
+Group gSolarisChart (gSolaris)
+Number solarisKollektor "Kollektor [%.0f °C]" <temperature> (gSolarisChart) {mqtt="<[tux:sensors/solaris:state:JSONPATH($.TK)]"}
+Number solarisSpeicher "Speicher [%.0f °C]"  <temperature> (gSolarisChart) {mqtt="<[tux:sensors/solaris:state:JSONPATH($.TS)]"}
+Number solarisVorlauf  "Vorlauf [%.0f °C]" <temperature> (gSolarisChart) {mqtt="<[tux:sensors/solaris:state:JSONPATH($.TV)]"}  
+Number solarisRuecklauf "Rücklauf [%.0f °C]" <temperature> (gSolarisChart) {mqtt="<[tux:sensors/solaris:state:JSONPATH($.TR)]"}
+
+Group gSolarisChart2 (gSolaris)  
+Number solarisPumpe1  "Pumpe1 [%.0f %%]" 			 (gSolarisChart2)	{mqtt="<[tux:sensors/solaris:state:JSONPATH($.P1)]"}
+Number solarisPumpe2  "Pumpe2 [MAP(pump.map):%s]"	 (gSolarisChart2) {mqtt="<[tux:sensors/solaris:state:JSONPATH($.P2)]"}
+Number solarisDurchfluss  "Durchfluss [%.1f l/m]"    (gSolarisChart2)	{mqtt="<[tux:sensors/solaris:state:JSONPATH($.V)]"}
+Number solarisLeistung  "aktuelle Leistung [%.0f W]" <temperature> (gSolarisChart2) {mqtt="<[tux:sensors/solaris:state:JSONPATH($.P)]"}
+
+Number solarisChartPeriod	"Chart Period"
+
+
+
+Switch Test_Switch1 "Schalter 1" (gTest) {mqtt=">[tux:openHAB/Test_Switch1:command:ON:1],>[tux:openHAB/Test_Switch1:command:OFF:0]"}

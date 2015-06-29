@@ -1,0 +1,68 @@
+sitemap default label="MyHome"
+{
+	 Frame {
+		Text label="Rotex Solaris" icon="cellar" {
+	        Frame label="Rotex Solaris" {    
+	        		Text item=solarisLastUpdate
+	                Text item=solarisPumpe1
+	                Text item=solarisPumpe2
+	        		Text item=solarisKollektor    	   
+	                Text item=solarisSpeicher
+	                Text item=solarisVorlauf
+	                Text item=solarisRuecklauf
+	                Text item=solarisDurchfluss                
+	                Text item=solarisLeistung                
+	                Text item=solarisStatus
+	        }
+	        Frame {
+				Switch item=solarisChartPeriod label="Chart Period" mappings=[0="1h", 1="4h", 2="8h", 3="12h", 4="1d", 5="1w"]
+				Chart item=gSolarisChart period=h refresh=6000 visibility=[solarisChartPeriod==0, solarisChartPeriod=="Uninitialized"] service="rrd4j"
+				Chart item=gSolarisChart period=4h refresh=6000 visibility=[solarisChartPeriod==1] service="rrd4j"
+				Chart item=gSolarisChart period=8h refresh=6000 visibility=[solarisChartPeriod==2] service="rrd4j"
+				Chart item=gSolarisChart period=12h refresh=6000 visibility=[solarisChartPeriod==3] service="rrd4j"
+				Chart item=gSolarisChart period=D refresh=30000 visibility=[solarisChartPeriod==4] service="rrd4j"
+				Chart item=gSolarisChart period=W refresh=30000 visibility=[solarisChartPeriod==5] service="rrd4j"
+/*				
+				Chart item=gSolarisChart2 period=h refresh=6000 visibility=[solarisChartPeriod==0, solarisChartPeriod=="Uninitialized"] service="rrd4j"
+				Chart item=gSolarisChart2 period=4h refresh=6000 visibility=[solarisChartPeriod==1] service="rrd4j"
+				Chart item=gSolarisChart2 period=8h refresh=6000 visibility=[solarisChartPeriod==2] service="rrd4j"
+				Chart item=gSolarisChart2 period=12h refresh=6000 visibility=[solarisChartPeriod==3] service="rrd4j"
+				Chart item=gSolarisChart2 period=D refresh=30000 visibility=[solarisChartPeriod==4] service="rrd4j"
+				Chart item=gSolarisChart2 period=W refresh=30000 visibility=[solarisChartPeriod==5] service="rrd4j"
+*/				
+				Chart item=solarisDurchfluss period=h refresh=6000 visibility=[solarisChartPeriod==0, solarisChartPeriod=="Uninitialized"] service="rrd4j"
+				Chart item=solarisDurchfluss period=4h refresh=6000 visibility=[solarisChartPeriod==1] service="rrd4j"
+				Chart item=solarisDurchfluss period=8h refresh=6000 visibility=[solarisChartPeriod==2] service="rrd4j"
+				Chart item=solarisDurchfluss period=12h refresh=6000 visibility=[solarisChartPeriod==3] service="rrd4j"
+				Chart item=solarisDurchfluss period=D refresh=30000 visibility=[solarisChartPeriod==4] service="rrd4j"
+				Chart item=solarisDurchfluss period=W refresh=30000 visibility=[solarisChartPeriod==5] service="rrd4j"
+				
+				Chart item=solarisLeistung period=h refresh=6000 visibility=[solarisChartPeriod==0, solarisChartPeriod=="Uninitialized"] service="rrd4j"
+				Chart item=solarisLeistung period=4h refresh=6000 visibility=[solarisChartPeriod==1] service="rrd4j"
+				Chart item=solarisLeistung period=8h refresh=6000 visibility=[solarisChartPeriod==2] service="rrd4j"
+				Chart item=solarisLeistung period=12h refresh=6000 visibility=[solarisChartPeriod==3] service="rrd4j"
+				Chart item=solarisLeistung period=D refresh=30000 visibility=[solarisChartPeriod==4] service="rrd4j"
+				Chart item=solarisLeistung period=W refresh=30000 visibility=[solarisChartPeriod==5] service="rrd4j"
+
+				Chart item=solarisPumpe1 period=h refresh=6000 visibility=[solarisChartPeriod==0, solarisChartPeriod=="Uninitialized"] service="rrd4j"
+				Chart item=solarisPumpe1 period=4h refresh=6000 visibility=[solarisChartPeriod==1] service="rrd4j"
+				Chart item=solarisPumpe1 period=8h refresh=6000 visibility=[solarisChartPeriod==2] service="rrd4j"
+				Chart item=solarisPumpe1 period=12h refresh=6000 visibility=[solarisChartPeriod==3] service="rrd4j"
+				Chart item=solarisPumpe1 period=D refresh=30000 visibility=[solarisChartPeriod==4] service="rrd4j"
+				Chart item=solarisPumpe1 period=W refresh=30000 visibility=[solarisChartPeriod==5] service="rrd4j"
+				
+				Chart item=solarisPumpe2 period=h refresh=6000 visibility=[solarisChartPeriod==0, solarisChartPeriod=="Uninitialized"] service="rrd4j"
+				Chart item=solarisPumpe2 period=4h refresh=6000 visibility=[solarisChartPeriod==1] service="rrd4j"
+				Chart item=solarisPumpe2 period=8h refresh=6000 visibility=[solarisChartPeriod==2] service="rrd4j"
+				Chart item=solarisPumpe2 period=12h refresh=6000 visibility=[solarisChartPeriod==3] service="rrd4j"
+				Chart item=solarisPumpe2 period=D refresh=30000 visibility=[solarisChartPeriod==4] service="rrd4j"
+				Chart item=solarisPumpe2 period=W refresh=30000 visibility=[solarisChartPeriod==5] service="rrd4j"
+			}
+        }
+	    Text label="Test" icon="chart" {        
+	        Frame label="Test" {
+	        	Switch item=Test_Switch1
+	       	}
+       	}
+	}
+}
