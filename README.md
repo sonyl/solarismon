@@ -13,12 +13,12 @@ Therefore a few existing hardware and software components and an already up and 
 log files and finally generates a **[MQTT] (http://mqtt.org)** message for every received measurement 
 - this MQTT message is transferred to a **[Mosquitto](http://mosquitto.org/)** MQTT broker  running on the linux home server.
 - an **[OpenHAB] (http://www.openhab.org/)** home automation server running on the same linux box is configured to receive the 
-MQTT messages. It is the the task of openHAB to store the measured values in a round robin database and to visualize them. 
-The openHAB server is accessible via a browser in the local network but nice smartphone client apps for android and iOS are available as well.
+MQTT messages. It is the task of openHAB to store the measured values in a round robin database and to visualize them. 
+The openHAB server is accessible via a browser in the local network, but nice smartphone client apps for android and iOS are available as well.
 
 
 I'm pretty sure that it would be possible to run the openHAB and the mosquitto MQTT broker on the RasberryPi also, but installing them on the available
-linux box with less limited resources promised less efforts in installtion.
+linux box with less limited resources than the Pi was promising less efforts in installation.
 
 ### Hints
 
@@ -29,12 +29,12 @@ linux box with less limited resources promised less efforts in installtion.
  * `Sleeve: GND              connected to GND of the RaspberryPi` 
  
  The Solaris serial voltage level is 5V, whereas the RaspberryPi uses 3.3V. Hence a [level shifter](http://elinux.org/RPi_GPIO_Interface_Circuits#Level_Shifters) 
- is needed. In my case, a simple 2 resitor voltage divider works fine. Activate the Solaris data output in of the R3 module as described in the rotex manual. I selected a transfer interval 
+ is needed. In my case, a simple 2 resistor voltage divider works fine. Activate the Solaris data output of the RPS3 module as described in the rotex manual. I selected a transfer interval 
  of 30s and a baudrate of 19200.
 
 2. **Node.js init script:**
-If you want to have your Node.js application automatically started on every RaspberryPi reboot, init script
-like this one https://gist.github.com/peterhost/715255.  
+If you want to have your Node.js application automatically started on every RaspberryPi reboot, an init script
+like this one https://gist.github.com/peterhost/715255 may be used.  
 Since */bin/sh* is a softlink to */bin/dash* on my Raspbian linux, the script did not work as expected, so I had to replace
 *#!/bin/sh* with *#!/bin/bash* in the first line of the script.
 
