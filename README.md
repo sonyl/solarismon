@@ -14,7 +14,7 @@ log files and finally generates a **[MQTT] (http://mqtt.org)** message for every
 - this MQTT message is transferred to a **[Mosquitto](http://mosquitto.org/)** MQTT broker  running on the linux home server.
 - an **[OpenHAB] (http://www.openhab.org/)** home automation server running on the same linux box is configured to receive the 
 MQTT messages. It is the the task of openHAB to store the measured values in a round robin database and to visualize them. 
-The openHAB server is accessible via a browser in the local network but nice smartphone apps for android and iOS are available as well.
+The openHAB server is accessible via a browser in the local network but nice smartphone client apps for android and iOS are available as well.
 
 
 I'm pretty sure that it would be possible to run the openHAB and the mosquitto MQTT broker on the RasberryPi also, but installing them on the available
