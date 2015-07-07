@@ -42,6 +42,11 @@ Since */bin/sh* is a softlink to */bin/dash* on my Raspbian linux, the script di
 The example openHAB configuration files (items, persistence, sitemaps) are located unter the "openhab" directory.
 Don't forget to activate the MQTT binding, as described in the [openHAB configuration wiki](https://github.com/openhab/openhab/wiki/MQTT-Binding).
 
+### Screenshots
+A few openHAB screenshots
+![](/images/openHAB-screen1.jpg?raw=true)
+![](/images/openHAB-screen2.jpg?raw=true)
+
 ### Images
 
 Here are some images of the installation of the Raspberry pi into the Rotex Solaris Console:
