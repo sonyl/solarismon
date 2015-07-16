@@ -23,12 +23,12 @@ linux box with less limited resources than the Pi was promising less efforts in 
 ### Hints
 
 1. **Serial Connection:** 
- The three contacts of the stereo jack are:
+ The three contacts of the 3.5mm stereo jack are:
  * `Tip:    Solaris TX       connected to RX of the RaspberryPi`
  * `Ring:   Solaris RX       not used`
  * `Sleeve: GND              connected to GND of the RaspberryPi` 
  
- The Solaris serial voltage level is 5V, whereas the RaspberryPi uses 3.3V. Hence a [level shifter](http://elinux.org/RPi_GPIO_Interface_Circuits#Level_Shifters) 
+ The serial voltage level used by the Solaris heating system controller panel is 5V, whereas the RaspberryPi uses 3.3V. Hence a [level shifter](http://elinux.org/RPi_GPIO_Interface_Circuits#Level_Shifters) 
  is needed. In my case, a simple 2 resistor voltage divider works fine. Activate the Solaris data output of the RPS3 module as described in the rotex manual. I selected a transfer interval 
  of 30s and a baudrate of 19200.
 
@@ -39,8 +39,11 @@ Since */bin/sh* is a softlink to */bin/dash* on my Raspbian linux, the script di
 *#!/bin/sh* with *#!/bin/bash* in the first line of the script.
 
 3. **openHAB configuration:**  
-The example openHAB configuration files (items, persistence, sitemaps) are located unter the "openhab" directory.
-Don't forget to activate the MQTT binding, as described in the [openHAB configuration wiki](https://github.com/openhab/openhab/wiki/MQTT-Binding).
+Some example openHAB configuration files (items, persistence, sitemaps) are located unter the "openhab" directory in this repository. They define items (measurement values), their graphical representation in the openHAB clients and their persistence strategy.
+Don't forget to activate and configure the MQTT binding, as described in the [openHAB configuration wiki](https://github.com/openhab/openhab/wiki/MQTT-Binding). For me, changing / uncommenting the following two lines of `OPENHAB_HOME/configurations/openhab.cfg` was sufficient.
+
+        mqtt:tux.url=tcp://tux.home:1883
+        mqtt:tux.clientId=openHAB
 
 ### Screenshots
 A few openHAB screenshots
