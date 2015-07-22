@@ -29,7 +29,7 @@ linux box with less limited resources than the Pi was promising less efforts in 
  * `Sleeve: GND              connected to GND of the RaspberryPi` 
  
  The serial voltage level used by the Solaris heating system controller panel is 5V, whereas the RaspberryPi uses 3.3V. Hence a [level shifter](http://elinux.org/RPi_GPIO_Interface_Circuits#Level_Shifters) 
- is needed. In my case, a simple 2 resistor voltage divider works fine. Activate the Solaris data output of the RPS3 module as described in the rotex manual. I selected a transfer interval 
+ is needed. In my case, a simple [2 resistor voltage divider](http://elinux.org/RPi_GPIO_Interface_Circuits#Voltage_divider) works fine. Activate the Solaris data output of the RPS3 module as described in the rotex manual. I selected a transfer interval 
  of 30s and a baudrate of 19200.
 
 2. **Node.js init script:**
