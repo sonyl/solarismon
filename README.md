@@ -6,6 +6,8 @@ The goal of this project is to monitor the behavior and afterwards optimize the 
 heating system with the least possible efforts.
 
 Therefore a few existing hardware and software components and an already up and running linux home server where utilized.
+
+Detailed information is available on **[the project homepage](http://sonyl.github.io/solarismon/)**
 ### Components
 - a **[RaspberryPi](https://www.raspberrypi.org/)** receives the serial output of the Rotex Solaris control unit 
 (CONF connector, 3.5mm stereo jack).
@@ -45,15 +47,5 @@ Don't forget to activate and configure the MQTT binding, as described in the [op
         mqtt:tux.url=tcp://tux.home:1883
         mqtt:tux.clientId=openHAB
 
-### Screenshots
-A few openHAB screenshots
-![](/images/openHAB-screen1.jpg?raw=true)
-![](/images/openHAB-screen2.jpg?raw=true)
-
-### Images
-
-Here are some images of the installation of the Raspberry pi into the Rotex Solaris Console:
-![](/images/IMG_0480.jpg?raw=true)
-![](/images/IMG_0481.jpg?raw=true)
 
 
