@@ -1,15 +1,20 @@
 {
   "name": "solaris",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Rotex Solaris RPS3 Solar Heating System Monitor",
   "main": "solaris.js",
   "dependencies": {
     "mqtt": "^1.3.0",
+    "mysql": "git://github.com/felixge/node-mysql",
     "serialport": "^1.7.4"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sonyl/solarismon.git"
   },
   "author": "Gerhard Dickescheid",
   "license": "MIT"
