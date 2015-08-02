@@ -38,14 +38,25 @@ linux box with less limited resources than the Pi was promising less efforts in 
 If you want to have your Node.js application automatically started on every RaspberryPi reboot, an init script
 like this one https://gist.github.com/peterhost/715255 may be used.  
 Since */bin/sh* is a softlink to */bin/dash* on my Raspbian linux, the script did not work as expected, so I had to replace
-*#!/bin/sh* with *#!/bin/bash* in the first line of the script.
 
+        #!/bin/sh
+        with 
+        #!/bin/bash
+in the first line of the script.
+The Node.js application is simply started with 
+
+        node solaris.js
 3. **openHAB configuration:**  
 Some example openHAB configuration files (items, persistence, sitemaps) are located unter the "openhab" directory in this repository. They define items (measurement values), their graphical representation in the openHAB clients and their persistence strategy.
 Don't forget to activate and configure the MQTT binding, as described in the [openHAB configuration wiki](https://github.com/openhab/openhab/wiki/MQTT-Binding). For me, changing / uncommenting the following two lines of `OPENHAB_HOME/configurations/openhab.cfg` was sufficient.
 
         mqtt:tux.url=tcp://tux.home:1883
         mqtt:tux.clientId=openHAB
+4. **MySql import tool:**  
+Logfiles are created for each individual day on the SD-card of the RaspberryPi. The naming scheme for the filenames is *solaris-yyyy-mm-dd.txt*. It is possible to import the collected data from these logfiles into a database for later avaluation and analysis. The tool that imports the logfiles into a mysql database is *cp2db*. Create a table with the ddl-statements in *resource/create.sql* and adjust the connection properties and database credentials in line 4 to 7 of *cp2db.js*. To import all logfiles of a specific month, start the import for example with:
+
+        node cp2db solaris-2015-07*.txt
+
 
 
 
