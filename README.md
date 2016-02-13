@@ -53,7 +53,7 @@ Don't forget to activate and configure the MQTT binding, as described in the [op
         mqtt:tux.url=tcp://tux.home:1883
         mqtt:tux.clientId=openHAB
 4. **MySql import tool:**  
-Logfiles are created for each individual day on the SD-card of the RaspberryPi. The naming scheme for the filenames is *solaris-yyyy-mm-dd.txt*. It is possible to import the collected data from these logfiles into a database for later avaluation and analysis. The tool that imports the logfiles into a mysql database is *cp2db*. Create a table with the ddl-statements in *resource/create.sql* and adjust the connection properties and database credentials in line 4 to 7 of *cp2db.js*. To import all logfiles of a specific month, start the import for example with:
+Logfiles are created for each individual day on the SD-card of the RaspberryPi. The naming scheme for the filenames is *solaris-yyyy-mm-dd.txt*. It is possible to import the collected data from these logfiles into a database for later evaluation and analysis. The tool that imports the logfiles into a mysql database is *cp2db*. Create a table with the ddl-statements in *resource/create.sql* and adjust the connection properties and database credentials in line 4 to 7 of *cp2db.js*. To import all logfiles of a specific month, start the import for example with:
 
         node cp2db solaris-2015-07*.txt
 
