@@ -1,5 +1,15 @@
 # solarismon
 
+Update: 2019-01-05
+The update of some outdated npm packages (serialport, mqtt) may require a up to date node.js installation.
+I installed the ARMv6 linux binaries from https://nodejs.org/en/download/ on the raspberry pi and provided symlinks from '/usr/local/bin' to 
+the node/npm/npx executables in '/home/pi/node-v10.15.0-linux-armv6l' like so:
+
+        ln -s /home/pi/node-v10.15.0-linux-armv6l/node /usr/local/bin/node
+        ln -s /home/pi/node-v10.15.0-linux-armv6l/npm /usr/local/bin/npm
+        ln -s /home/pi/node-v10.15.0-linux-armv6l/npx /usr/local/bin/npx
+
+
 Simple RaspberryPi based Solaris RPS3 Solar Heating System Monitor
 ---
 The goal of this project is to monitor the behavior and afterwards optimize the settings of a Rotex Solaris RPS3 solar 
