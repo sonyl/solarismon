@@ -4,9 +4,9 @@
   "description": "Rotex Solaris RPS3 Solar Heating System Monitor",
   "main": "solaris.js",
   "dependencies": {
-    "mqtt": "^2.18.8",
-    "mysql": "git://github.com/felixge/node-mysql",
-    "serialport": "^7.1.1"
+    "mqtt": "^4.0.1",
+    "mysql": "^2.18.1",
+    "serialport": "^9.0.0"
   },
   "devDependencies": {},
   "scripts": {
